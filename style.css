@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1d20; /* Dark slate background */
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* Layout Container */
+.portfolio-container {
+    display: flex;
+    max-width: 1200px;
+    width: 90%;
+    align-items: center;
+    gap: 5%;
+}
+
+/* Left Image Section */
+.image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* The glowing, tinted circular wrapper */
+.profile-circle {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    /* Soft green gradient tint similar to the image overlay */
+    background: linear-gradient(135deg, rgba(163, 218, 141, 0.4), rgba(46, 76, 31, 0.4));
+}
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mix-blend-mode: multiply; /* Blends the photo with the background tint */
+    filter: brightness(0.9) contrast(1.1);
+}
+
+/* Right Text Section */
+.text-section {
+    flex: 1.2;
+}
+
+/* Futuristic, bold headers */
+.hero-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    line-height: 0.95;
+    letter-spacing: 2px;
+    color: #e2e8f0;
+    margin-bottom: 1rem;
+}
+
+.job-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    color: #a3da8d; /* Muted neon green accent */
+    letter-spacing: 4px;
+    margin-bottom: 2rem;
+}
+
+.bio {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    max-width: 500px;
+    margin-bottom: 2.5rem;
+}
+
+/* Pill-shaped Download Button */
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 28px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.download-btn:hover {
+    background-color: #ffffff;
+    color: #1a1d20;
+    border-color: #ffffff;
+}
+
+/* Top Right Menu Button */
+.menu-icon {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    cursor: pointer;
+}
+.menu-icon span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #ffffff;
+    margin-bottom: 6px;
+    border-radius: 2px;
+}
+
+/* Responsive adjustments for tablets/phones */
+@media (max-width: 768px) {
+    .portfolio-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 0;
+    }
+    .profile-circle {
+        width: 280px;
+        height: 280px;
+        margin-bottom: 2rem;
+    }
+    .hero-name {
+        font-size: 2.5rem;
+    }
+    .bio {
+        margin: 0 auto 2rem auto;
+    }
+}
