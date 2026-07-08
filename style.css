@@ -256,3 +256,44 @@ body {
         display: none; /* Stretches month and year out inline on mobile */
     }
 }
+.section-divider {
+    max-width: 1200px;
+    width: 90%;
+    margin: 40px auto 60px auto; /* Centered container, contents aligned left */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Keeps text and under-line anchored left */
+    text-align: left;
+}
+
+.section-heading {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #a3da8d; /* Your signature neon-green accent color */
+    margin-bottom: 12px;
+}
+
+.heading-line {
+    width: 60px;
+    height: 2px;
+    background-color: #a3da8d;
+    border-radius: 2px;
+}
+
+/* Responsive adjustment for tablets/phones */
+@media (max-width: 768px) {
+    .section-divider {
+        align-items: flex-start; 
+        margin: 20px auto 40px auto;
+    }
+}
+.cert-section {
+    display: flex;
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto 100px auto; /* Changed top margin to 0, added 100px to the bottom */
+    align-items: center;
+    gap: 5%;
+}
