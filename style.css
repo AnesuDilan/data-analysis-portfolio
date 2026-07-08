@@ -12,6 +12,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-y: auto;
     overflow-x: hidden;
 }
 
@@ -22,6 +23,10 @@ body {
     width: 90%;
     align-items: center;
     gap: 5%;
+    min-height: 80vh; 
+    
+    /* Add a margin to push the content below it down naturally */
+    margin: 0 auto 60px auto;
 }
 
 /* Left Image Section */
