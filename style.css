@@ -144,22 +144,22 @@ body {
     }
 }
 /* ==========================================
-   Certificate / Project Layout Styles 
+    Certificate / Project Layout Styles 
    ========================================== */
 
-/* Outer Layout Container - Places Text Content on Left, Image on Right */
+/* Outer Layout Container - Cleans up desktop grid layout spacing */
 .cert-section {
     display: flex;
     max-width: 1200px;
     width: 90%;
-    margin: 80px auto; /* Provides separation if stacked under your hero section */
+    margin: 0 auto 60px auto; /* Tightened gap between stacked certs to 60px */
     align-items: center;
-    gap: 5%;
+    justify-content: space-between; 
 }
 
 /* Combines Date + Paragraph Side-by-Side */
 .cert-content {
-    width: 55%; /* Explicitly locks the text side to 55% of the row width */
+    flex: 0 0 55%; /* Firmly locks text container sizing at 55% width */
     display: flex;
     gap: 40px;
     align-items: flex-start;
@@ -219,34 +219,29 @@ body {
 }
 
 .cert-link:hover {
-    gap: 8px; /* Animates the arrow outward slightly on hover */
+    gap: 8px;
 }
 
-/* Image Container & Ambient Screen Backlight Glow Effect */
+/* Image Container Fixed & Closed Properly ✅ */
 .cert-visual {
-    flex: 1;
+    flex: 0 0 40%; /* Firmly locks image container sizing at 40% width */
     display: flex;
     justify-content: center;
-}
-
-.cert-visual {
-    width: 40%; /* Explicitly locks the image container to 40% of the row width */
-    display: flex;
-    justify-content: center;
+} /* <-- Fixed missing brace here */
 
 .cert-visual img {
     width: 100%;
-    max-width: 500px; /* Prevents the image from getting ridiculously blown out on huge monitors */
+    max-width: 500px; 
     height: auto;
     border-radius: 4px;
     box-shadow: 0 0 60px rgba(255, 255, 255, 0.12), 
                 0 0 20px rgba(255, 255, 255, 0.04);
 }
     
-    /* Mobile & Tablet Adaptation for the Certificate Layout */
+/* Mobile & Tablet Adaptation for the Certificate Layout */
 @media (max-width: 768px) {
     .cert-section {
-        flex-direction: column-reverse; /* Flips so text details stay above/below naturally */
+        flex-direction: column-reverse; 
         gap: 3rem;
         text-align: left;
     }
@@ -254,6 +249,11 @@ body {
     .cert-content {
         flex-direction: column;
         gap: 1.5rem;
+        width: 100%;
+    }
+
+    .cert-visual {
+        width: 100%;
     }
 
     .cert-date {
@@ -263,14 +263,18 @@ body {
     }
 
     .cert-month-year br {
-        display: none; /* Stretches month and year out inline on mobile */
+        display: none; 
     }
 }
+
+/* ==========================================
+    Section Divider Styles
+   ========================================== */
 .section-divider {
     max-width: 1200px;
     width: 90%;
-    /* Increased top margin to 100px to push it safely away from the hero button */
-    margin: 100px auto 40px auto; 
+    /* 140px on top creates massive clearance below download button */
+    margin: 140px auto 40px auto;  
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -282,7 +286,7 @@ body {
     font-size: 1.5rem;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: #a3da8d; /* Your signature neon-green accent color */
+    color: #a3da8d; 
     margin-bottom: 12px;
 }
 
@@ -293,19 +297,10 @@ body {
     border-radius: 2px;
 }
 
-/* Responsive adjustment for tablets/phones */
+/* Responsive adjustment for divider on phone screens */
 @media (max-width: 768px) {
     .section-divider {
         align-items: flex-start; 
-        margin: 20px auto 40px auto;
+        margin: 60px auto 40px auto;
     }
-}
-.cert-section {
-    display: flex;
-    max-width: 1200px;
-    width: 90%;
-    /* Dropped from 100px to 50px for a tighter, more cohesive spacing */
-    margin: 0 auto 50px auto; 
-    align-items: center;
-    gap: 5%;
 }
