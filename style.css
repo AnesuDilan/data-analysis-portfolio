@@ -138,3 +138,121 @@ body {
         margin: 0 auto 2rem auto;
     }
 }
+/* ==========================================
+   Certificate / Project Layout Styles 
+   ========================================== */
+
+/* Outer Layout Container - Places Text Content on Left, Image on Right */
+.cert-section {
+    display: flex;
+    max-width: 1200px;
+    width: 90%;
+    margin: 80px auto; /* Provides separation if stacked under your hero section */
+    align-items: center;
+    gap: 5%;
+}
+
+/* Combines Date + Paragraph Side-by-Side */
+.cert-content {
+    flex: 1.2;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Distinct Date Column */
+.cert-date {
+    display: flex;
+    flex-direction: column;
+    min-width: 90px;
+}
+
+.cert-day {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.cert-month-year {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #a0aec0;
+    line-height: 1.3;
+    margin-top: 5px;
+}
+
+/* Core Copy Blocks */
+.cert-text {
+    flex: 1;
+}
+
+.cert-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+}
+
+.cert-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #cbd5e1;
+    margin-bottom: 2.5rem;
+}
+
+/* View Certificate Link Button Style */
+.cert-link {
+    display: inline-flex;
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: gap 0.2s ease;
+}
+
+.cert-link:hover {
+    gap: 8px; /* Animates the arrow outward slightly on hover */
+}
+
+/* Image Container & Ambient Screen Backlight Glow Effect */
+.cert-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.cert-visual img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    /* Soft white/cyan lighting layer to copy the display glare look */
+    box-shadow: 0 0 60px rgba(255, 255, 255, 0.12), 
+                0 0 20px rgba(255, 255, 255, 0.04);
+}
+
+/* Mobile & Tablet Adaptation for the Certificate Layout */
+@media (max-width: 768px) {
+    .cert-section {
+        flex-direction: column-reverse; /* Flips so text details stay above/below naturally */
+        gap: 3rem;
+        text-align: left;
+    }
+
+    .cert-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .cert-date {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .cert-month-year br {
+        display: none; /* Stretches month and year out inline on mobile */
+    }
+}
