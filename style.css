@@ -1,3 +1,6 @@
+/* ==========================================
+   1. GLOBAL RESET & BASE STYLES
+   ========================================== */
 * {
     margin: 0;
     padding: 0;
@@ -9,12 +12,13 @@ body {
     color: #ffffff;
     font-family: 'Inter', sans-serif;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-y: auto;
+    overflow-y: auto; /* Allows vertical scrolling down the page */
     overflow-x: hidden;
 }
+
+/* ==========================================
+   2. HERO / PROFILE INTRO STYLES
+   ========================================== */
 
 /* Layout Container */
 .portfolio-container {
@@ -23,10 +27,8 @@ body {
     width: 90%;
     align-items: center;
     gap: 5%;
-    min-height: 80vh; 
-    
-    /* Add a margin to push the content below it down naturally */
-    margin: 0 auto 60px auto;
+    min-height: 80vh; /* Takes up most of the primary view */
+    margin: 0 auto;   /* Centers the container horizontally */
 }
 
 /* Left Image Section */
@@ -124,7 +126,7 @@ body {
     border-radius: 2px;
 }
 
-/* Responsive adjustments for tablets/phones */
+/* Hero Section Mobile Adjustments */
 @media (max-width: 768px) {
     .portfolio-container {
         flex-direction: column;
@@ -143,23 +145,60 @@ body {
         margin: 0 auto 2rem auto;
     }
 }
+
 /* ==========================================
-    Certificate / Project Layout Styles 
+   3. SECTION DIVIDER HEADING STYLES
+   ========================================== */
+.section-divider {
+    max-width: 1200px;
+    width: 90%;
+    /* 140px on top pushes heading comfortably down away from the Download CV button */
+    margin: 140px auto 40px auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.section-heading {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #a3da8d; /* Signature green */
+    margin-bottom: 12px;
+}
+
+.heading-line {
+    width: 60px;
+    height: 2px;
+    background-color: #a3da8d;
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    .section-divider {
+        margin: 60px auto 40px auto;
+    }
+}
+
+/* ==========================================
+   4. CERTIFICATE CARDS GRID STYLES
    ========================================== */
 
-/* Outer Layout Container - Cleans up desktop grid layout spacing */
+/* Main outer split grid row */
 .cert-section {
     display: flex;
     max-width: 1200px;
     width: 90%;
-    margin: 0 auto 60px auto; /* Tightened gap between stacked certs to 60px */
+    margin: 0 auto 60px auto; /* 60px padding below each row keeps stacked certs organized */
     align-items: center;
-    justify-content: space-between; 
+    justify-content: space-between;
 }
 
-/* Combines Date + Paragraph Side-by-Side */
+/* Left Content Wrapper (Holds Date + Text Side-by-Side) */
 .cert-content {
-    flex: 0 0 55%; /* Firmly locks text container sizing at 55% width */
+    flex: 0 0 55%; /* Locks text container strictly to 55% layout width */
     display: flex;
     gap: 40px;
     align-items: flex-start;
@@ -187,7 +226,7 @@ body {
     margin-top: 5px;
 }
 
-/* Core Copy Blocks */
+/* Core Paragraph Blocks */
 .cert-text {
     flex: 1;
 }
@@ -207,7 +246,7 @@ body {
     margin-bottom: 2.5rem;
 }
 
-/* View Certificate Link Button Style */
+/* Link Button style */
 .cert-link {
     display: inline-flex;
     align-items: center;
@@ -222,13 +261,14 @@ body {
     gap: 8px;
 }
 
-/* Image Container Fixed & Closed Properly ✅ */
+/* Right Content Wrapper (Holds Document Frame) */
 .cert-visual {
-    flex: 0 0 40%; /* Firmly locks image container sizing at 40% width */
+    flex: 0 0 40%; /* Locks image container strictly to 40% layout width */
     display: flex;
     justify-content: center;
-} /* <-- Fixed missing brace here */
+} 
 
+/* Certificate Image Layout Rules & Ambient Light Filter */
 .cert-visual img {
     width: 100%;
     max-width: 500px; 
@@ -238,10 +278,10 @@ body {
                 0 0 20px rgba(255, 255, 255, 0.04);
 }
     
-/* Mobile & Tablet Adaptation for the Certificate Layout */
+/* Certificate Grid Mobile Adaptations */
 @media (max-width: 768px) {
     .cert-section {
-        flex-direction: column-reverse; 
+        flex-direction: column-reverse; /* Puts image above description on narrow mobile displays */
         gap: 3rem;
         text-align: left;
     }
@@ -264,43 +304,5 @@ body {
 
     .cert-month-year br {
         display: none; 
-    }
-}
-
-/* ==========================================
-    Section Divider Styles
-   ========================================== */
-.section-divider {
-    max-width: 1200px;
-    width: 90%;
-    /* 140px on top creates massive clearance below download button */
-    margin: 140px auto 40px auto;  
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-}
-
-.section-heading {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.5rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #a3da8d; 
-    margin-bottom: 12px;
-}
-
-.heading-line {
-    width: 60px;
-    height: 2px;
-    background-color: #a3da8d;
-    border-radius: 2px;
-}
-
-/* Responsive adjustment for divider on phone screens */
-@media (max-width: 768px) {
-    .section-divider {
-        align-items: flex-start; 
-        margin: 60px auto 40px auto;
     }
 }
