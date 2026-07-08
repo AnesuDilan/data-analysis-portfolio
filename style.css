@@ -16,19 +16,16 @@ body {
     overflow-x: hidden;
 }
 
-/* ==========================================
-   2. HERO / PROFILE INTRO STYLES
-   ========================================== */
-
 /* Layout Container */
 .portfolio-container {
     display: flex;
     max-width: 1200px;
-    width: 90%;
+    width: min(90%, 1200px);
+    margin: 0 auto;
     align-items: center;
-    gap: 5%;
-    min-height: 80vh; /* Takes up most of the primary view */
-    margin: 0 auto;   /* Centers the container horizontally */
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
 /* Left Image Section */
