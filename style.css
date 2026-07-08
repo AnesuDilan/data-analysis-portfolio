@@ -154,7 +154,7 @@ body {
 
 /* Combines Date + Paragraph Side-by-Side */
 .cert-content {
-    flex: 1.2;
+    width: 55%; /* Explicitly locks the text side to 55% of the row width */
     display: flex;
     gap: 40px;
     align-items: flex-start;
@@ -224,16 +224,21 @@ body {
     justify-content: center;
 }
 
+.cert-visual {
+    width: 40%; /* Explicitly locks the image container to 40% of the row width */
+    display: flex;
+    justify-content: center;
+
 .cert-visual img {
-    max-width: 100%;
+    width: 100%;
+    max-width: 500px; /* Prevents the image from getting ridiculously blown out on huge monitors */
     height: auto;
     border-radius: 4px;
-    /* Soft white/cyan lighting layer to copy the display glare look */
     box-shadow: 0 0 60px rgba(255, 255, 255, 0.12), 
                 0 0 20px rgba(255, 255, 255, 0.04);
 }
-
-/* Mobile & Tablet Adaptation for the Certificate Layout */
+    
+    /* Mobile & Tablet Adaptation for the Certificate Layout */
 @media (max-width: 768px) {
     .cert-section {
         flex-direction: column-reverse; /* Flips so text details stay above/below naturally */
@@ -259,10 +264,11 @@ body {
 .section-divider {
     max-width: 1200px;
     width: 90%;
-    margin: 40px auto 60px auto; /* Centered container, contents aligned left */
+    /* Increased top margin to 100px to push it safely away from the hero button */
+    margin: 100px auto 40px auto; 
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Keeps text and under-line anchored left */
+    align-items: flex-start;
     text-align: left;
 }
 
@@ -293,7 +299,8 @@ body {
     display: flex;
     max-width: 1200px;
     width: 90%;
-    margin: 0 auto 100px auto; /* Changed top margin to 0, added 100px to the bottom */
+    /* Dropped from 100px to 50px for a tighter, more cohesive spacing */
+    margin: 0 auto 50px auto; 
     align-items: center;
     gap: 5%;
 }
