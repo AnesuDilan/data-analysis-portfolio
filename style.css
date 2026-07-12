@@ -1,5 +1,5 @@
 /* ==========================================
-   GLOBAL
+   1. GLOBAL
 ========================================== */
 
 *{
@@ -9,23 +9,35 @@
 }
 
 html{
+    scroll-behavior:smooth;
     overflow-x:hidden;
 }
 
 body{
     background:#1a1d20;
-    color:#fff;
+    color:#ffffff;
     font-family:'Inter',sans-serif;
     overflow-x:hidden;
 }
 
 img{
     display:block;
+    width:100%;
     max-width:100%;
 }
 
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font:inherit;
+    cursor:pointer;
+}
+
 /* ==========================================
-   HERO
+   2. HERO
 ========================================== */
 
 .portfolio-container{
@@ -35,26 +47,25 @@ img{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    gap:60px;
-    flex-wrap:wrap;
+    gap:70px;
 }
 
 .image-section{
-    flex:1 1 400px;
+    flex:1;
     display:flex;
     justify-content:center;
 }
 
 .profile-circle{
     width:100%;
-    max-width:450px;
+    max-width:430px;
     aspect-ratio:1;
     border-radius:50%;
     overflow:hidden;
     background:linear-gradient(
         135deg,
-        rgba(163,218,141,.4),
-        rgba(46,76,31,.4)
+        rgba(163,218,141,.35),
+        rgba(46,76,31,.35)
     );
 }
 
@@ -62,32 +73,32 @@ img{
     width:100%;
     height:100%;
     object-fit:cover;
-    mix-blend-mode:multiply;
-    filter:brightness(.9) contrast(1.1);
+    filter:brightness(.95);
 }
 
 .text-section{
-    flex:1 1 500px;
+    flex:1;
 }
 
 .hero-name{
-    font-family:'Space Grotesk',sans-serif;
+    font-family:'Orbitron',sans-serif;
     font-size:4rem;
-    line-height:.95;
+    line-height:1;
     margin-bottom:20px;
 }
 
 .job-title{
     font-family:'Orbitron',sans-serif;
-    letter-spacing:4px;
+    font-size:1rem;
+    letter-spacing:5px;
     color:#a3da8d;
     margin-bottom:30px;
 }
 
 .bio{
-    max-width:520px;
-    color:#cbd5e1;
-    line-height:1.8;
+    max-width:560px;
+    color:#94a3b8;
+    line-height:1.9;
     margin-bottom:35px;
 }
 
@@ -95,21 +106,19 @@ img{
     display:inline-flex;
     align-items:center;
     gap:10px;
-    padding:14px 30px;
+    padding:15px 34px;
+    border:1px solid rgba(255,255,255,.25);
     border-radius:50px;
-    border:1px solid rgba(255,255,255,.3);
-    color:white;
-    text-decoration:none;
     transition:.3s;
 }
 
 .download-btn:hover{
-    background:white;
+    background:#ffffff;
     color:#1a1d20;
 }
 
 /* ==========================================
-   MENU
+   3. MENU
 ========================================== */
 
 .menu-icon{
@@ -121,14 +130,14 @@ img{
 
 .menu-icon span{
     display:block;
-    width:26px;
+    width:28px;
     height:2px;
-    background:white;
-    margin-bottom:6px;
+    background:#ffffff;
+    margin-bottom:7px;
 }
 
 /* ==========================================
-   SECTION TITLE
+   4. SECTION HEADINGS
 ========================================== */
 
 .section-divider{
@@ -138,19 +147,111 @@ img{
 
 .section-heading{
     font-family:'Orbitron',sans-serif;
+    font-size:2rem;
     color:#a3da8d;
     letter-spacing:3px;
-    margin-bottom:12px;
+    margin-bottom:15px;
 }
 
 .heading-line{
-    width:60px;
+    width:65px;
     height:2px;
     background:#a3da8d;
 }
+/* ==========================================
+   5. PORTFOLIO
+========================================== */
+
+.portfolio-projects{
+    width:min(90%,1200px);
+    margin:0 auto 120px;
+}
+
+/* Each Technology Section */
+
+.project-category{
+    margin-bottom:90px;
+}
+
+.category-title{
+    font-family:'Orbitron',sans-serif;
+    color:#a3da8d;
+    font-size:1.4rem;
+    letter-spacing:2px;
+    margin-bottom:30px;
+    text-transform:uppercase;
+}
+
+/* Grid */
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    gap:35px;
+}
+
+/* Card */
+
+.project-card{
+    background:#23272b;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    overflow:hidden;
+    transition:all .35s ease;
+}
+
+.project-card:hover{
+    transform:translateY(-8px);
+    border-color:#a3da8d;
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
+.project-card img{
+    width:100%;
+    aspect-ratio:16/9;
+    object-fit:cover;
+}
+
+/* Content */
+
+.project-info{
+    padding:28px;
+}
+
+.project-info h4{
+    font-size:1.45rem;
+    margin-bottom:15px;
+}
+
+.project-info p{
+    color:#94a3b8;
+    line-height:1.8;
+    margin-bottom:22px;
+}
+
+/* Buttons */
+
+.project-links{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.project-btn{
+    display:inline-block;
+    padding:12px 24px;
+    border-radius:50px;
+    border:1px solid rgba(255,255,255,.18);
+    transition:.3s;
+}
+
+.project-btn:hover{
+    background:#a3da8d;
+    color:#1a1d20;
+}
 
 /* ==========================================
-   CERTIFICATIONS
+   6. CERTIFICATIONS
 ========================================== */
 
 .certifications{
@@ -163,8 +264,12 @@ img{
     justify-content:space-between;
     align-items:center;
     gap:30px;
-    padding:28px 0;
+    padding:30px 0;
     border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.cert-item:last-child{
+    border-bottom:none;
 }
 
 .cert-item h3{
@@ -178,72 +283,17 @@ img{
 
 .cert-item a{
     color:#a3da8d;
-    text-decoration:none;
+    font-weight:600;
     white-space:nowrap;
     transition:.3s;
 }
 
 .cert-item a:hover{
-    color:white;
-}
-
-@media(max-width:768px){
-
-.cert-item{
-    flex-direction:column;
-    align-items:flex-start;
-}
-
+    color:#ffffff;
 }
 
 /* ==========================================
-   MOBILE
-========================================== */
-
-@media(max-width:768px){
-
-.portfolio-container{
-    flex-direction:column;
-    text-align:center;
-}
-
-.hero-name{
-    font-size:2.5rem;
-}
-
-.profile-circle{
-    max-width:280px;
-}
-
-.bio{
-    margin:auto auto 35px;
-}
-
-.section-divider{
-    margin:70px auto 40px;
-}
-
-.cert-section{
-    flex-direction:column-reverse;
-}
-
-.cert-content{
-    flex-direction:column;
-}
-
-.cert-date{
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
-
-.cert-month-year br{
-    display:none;
-}
-
-}
-/* ==========================================
-   FOOTER
+   7. FOOTER
 ========================================== */
 
 .portfolio-footer{
@@ -251,14 +301,15 @@ img{
     margin:120px auto 60px;
     padding-top:60px;
     border-top:1px solid rgba(255,255,255,.08);
-
-    display:block;
 }
 
 .footer-block{
-    width:100%;
     max-width:700px;
     margin-bottom:60px;
+}
+
+.footer-block:last-child{
+    margin-bottom:0;
 }
 
 .portfolio-footer h3{
@@ -270,152 +321,182 @@ img{
 }
 
 .portfolio-footer p{
-    max-width:700px;
     color:#94a3b8;
-    line-height:1.8;
-    font-size:1rem;
-    margin-bottom:25px;
+    line-height:1.9;
+    margin-bottom:28px;
 }
 
 .email-btn{
-    display:inline-block;
-    padding:14px 32px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 34px;
     background:#a3da8d;
     color:#1a1d20;
     border-radius:50px;
-    text-decoration:none;
     font-weight:600;
     transition:.3s;
 }
 
 .email-btn:hover{
-    background:#fff;
+    background:#ffffff;
     transform:translateY(-2px);
 }
+/* ==========================================
+   8. RESPONSIVE
+========================================== */
 
-@media(max-width:768px){
+@media (max-width:992px){
 
-    .portfolio-footer{
-        margin:70px auto 40px;
+    .portfolio-container{
+        flex-direction:column;
+        text-align:center;
+        padding:60px 0;
+    }
+
+    .text-section{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .bio{
+        max-width:650px;
+    }
+
+    .hero-name{
+        font-size:3rem;
+    }
+
+    .project-grid{
+        grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    }
+
+    .cert-item{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:18px;
     }
 
 }
 
 
-.header-title-block h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 3.5rem;
-    font-weight: 700;
-   .project-categories{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
+@media (max-width:768px){
 
-.category-card{
-    background:#23272b;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:18px;
-    padding:35px;
-    text-decoration:none;
-    transition:.3s;
-}
+    .menu-icon{
+        top:25px;
+        right:25px;
+    }
 
-.category-card:hover{
-    transform:translateY(-8px);
-    border-color:#a3da8d;
-}
+    .portfolio-container{
+        gap:40px;
+    }
 
-.category-card h3{
-    color:#fff;
-    margin-bottom:15px;
-    font-size:1.5rem;
-}
+    .profile-circle{
+        max-width:280px;
+    }
 
-.category-card p{
-    color:#94a3b8;
-    line-height:1.7;
-    margin-bottom:30px;
-}
+    .hero-name{
+        font-size:2.5rem;
+        line-height:1.1;
+    }
 
-.category-card span{
-    color:#a3da8d;
-    font-weight:600;
-}
-/* ==========================================
-   PORTFOLIO
-========================================== */
+    .job-title{
+        font-size:.9rem;
+        letter-spacing:3px;
+    }
 
-.portfolio-projects{
-    width:min(90%,1200px);
-    margin:0 auto 120px;
-}
+    .section-divider{
+        margin:80px auto 40px;
+    }
 
-.project-category{
-    margin-bottom:80px;
-}
+    .section-heading{
+        font-size:1.6rem;
+    }
 
-.category-title{
-    font-family:'Orbitron',sans-serif;
-    color:#a3da8d;
-    letter-spacing:2px;
-    margin-bottom:30px;
-    font-size:1.3rem;
-}
+    .project-category{
+        margin-bottom:60px;
+    }
 
-.project-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-    gap:30px;
-}
-
-.project-card{
-    background:#23272b;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:18px;
-    overflow:hidden;
-    transition:.3s;
-}
-
-.project-card:hover{
-    transform:translateY(-8px);
-    border-color:#a3da8d;
-}
-
-.project-card img{
-    width:100%;
-    display:block;
-}
-
-.project-info{
-    padding:25px;
-}
-
-.project-info h4{
-    margin-bottom:12px;
-    font-size:1.3rem;
-}
-
-.project-info p{
-    color:#94a3b8;
-    line-height:1.7;
-    margin-bottom:20px;
-}
-
-.project-info a{
-    color:#a3da8d;
-    text-decoration:none;
-    font-weight:600;
-}
-
-.project-info a:hover{
-    color:#fff;
-}
-
-@media(max-width:768px){
+    .category-title{
+        font-size:1.2rem;
+    }
 
     .project-grid{
         grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .project-info{
+        padding:22px;
+    }
+
+    .project-info h4{
+        font-size:1.25rem;
+    }
+
+    .project-links{
+        flex-direction:column;
+    }
+
+    .project-btn{
+        width:100%;
+        text-align:center;
+    }
+
+    .certifications{
+        width:90%;
+    }
+
+    .portfolio-footer{
+        margin:80px auto 40px;
+    }
+
+}
+
+
+@media (max-width:480px){
+
+    .hero-name{
+        font-size:2rem;
+    }
+
+    .job-title{
+        font-size:.8rem;
+        letter-spacing:2px;
+    }
+
+    .bio{
+        font-size:.95rem;
+    }
+
+    .download-btn{
+        width:100%;
+        justify-content:center;
+    }
+
+    .project-card{
+        border-radius:14px;
+    }
+
+    .project-info{
+        padding:18px;
+    }
+
+    .project-info h4{
+        font-size:1.1rem;
+    }
+
+    .portfolio-footer h3{
+        font-size:.9rem;
+    }
+
+    .portfolio-footer p{
+        font-size:.95rem;
+    }
+
+    .email-btn{
+        width:100%;
     }
 
 }
