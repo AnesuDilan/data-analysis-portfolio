@@ -342,3 +342,80 @@ img{
     color:#a3da8d;
     font-weight:600;
 }
+/* ==========================================
+   PORTFOLIO
+========================================== */
+
+.portfolio-projects{
+    width:min(90%,1200px);
+    margin:0 auto 120px;
+}
+
+.project-category{
+    margin-bottom:80px;
+}
+
+.category-title{
+    font-family:'Orbitron',sans-serif;
+    color:#a3da8d;
+    letter-spacing:2px;
+    margin-bottom:30px;
+    font-size:1.3rem;
+}
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    gap:30px;
+}
+
+.project-card{
+    background:#23272b;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.project-card:hover{
+    transform:translateY(-8px);
+    border-color:#a3da8d;
+}
+
+.project-card img{
+    width:100%;
+    display:block;
+}
+
+.project-info{
+    padding:25px;
+}
+
+.project-info h4{
+    margin-bottom:12px;
+    font-size:1.3rem;
+}
+
+.project-info p{
+    color:#94a3b8;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.project-info a{
+    color:#a3da8d;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.project-info a:hover{
+    color:#fff;
+}
+
+@media(max-width:768px){
+
+    .project-grid{
+        grid-template-columns:1fr;
+    }
+
+}
