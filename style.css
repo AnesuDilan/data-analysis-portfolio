@@ -281,6 +281,9 @@ img{
 
 .footer-block{
     padding:10px;
+   .footer-block{
+    max-width:none;
+}
 }
 
 .portfolio-footer h3{
