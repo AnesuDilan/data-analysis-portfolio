@@ -261,3 +261,72 @@ img{
 }
 
 }
+/* ==========================================
+   5. FOOTER STYLES
+   ========================================== */
+.portfolio-footer {
+    max-width: 1200px;
+    width: 90%;
+    margin: 100px auto 40px auto; /* Generous spacing below certificates */
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Even spacing between "About This Site" and "Get in Touch" */
+    text-align: left;
+}
+
+.footer-block {
+    max-width: 650px; /* Limits paragraph width so it remains easy to read on desktop screens */
+}
+
+.portfolio-footer h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+}
+
+.portfolio-footer p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #94a3b8; /* Clean, slightly muted slate gray text */
+    margin-bottom: 20px;
+}
+
+/* Gradient Pill-Shaped Email Button */
+.email-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 36px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px; /* Perfect pill shape */
+    /* Sleek royal purple to indigo gradient transition */
+    background: linear-gradient(135deg, #5038ed, #6d28d9); 
+    box-shadow: 0 4px 20px rgba(109, 40, 217, 0.25);
+    transition: all 0.3s ease;
+}
+
+.email-btn:hover {
+    transform: translateY(-2px); /* Subtle elevation lifting effect */
+    box-shadow: 0 6px 24px rgba(109, 40, 217, 0.4);
+    filter: brightness(1.1);
+}
+
+/* Mobile Alignment Polish */
+@media (max-width: 768px) {
+    .portfolio-footer {
+        margin: 60px auto 40px auto;
+        gap: 35px;
+    }
+    
+    .portfolio-footer h3,
+    .portfolio-footer p {
+        text-align: left; /* Keeps it structurally crisp and readable on small screens */
+    }
+}
