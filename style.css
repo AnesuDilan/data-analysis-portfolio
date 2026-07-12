@@ -476,3 +476,147 @@ img{
         height: 38px;
     }
 }
+/* ==========================================
+   PROJECTS
+========================================== */
+
+.portfolio-projects{
+    width:min(90%,1200px);
+    margin:120px auto;
+}
+
+.projects-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:40px;
+    margin-bottom:40px;
+    flex-wrap:wrap;
+}
+
+.sub-category{
+    color:#a3da8d;
+    font-family:'Orbitron',sans-serif;
+    letter-spacing:3px;
+    display:block;
+    margin-bottom:12px;
+}
+
+.projects-header h2{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.header-tagline{
+    max-width:420px;
+    color:#94a3b8;
+    line-height:1.7;
+}
+
+.project-tabs{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:40px;
+}
+
+.tab-btn{
+    background:none;
+    border:1px solid rgba(255,255,255,.15);
+    color:white;
+    padding:12px 24px;
+    border-radius:50px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.tab-btn:hover,
+.tab-btn.active{
+    background:#a3da8d;
+    color:#1a1d20;
+}
+
+.project-display-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:25px;
+}
+
+.dashboard-main-card,
+.dashboard-sub-card{
+    display:block;
+    overflow:hidden;
+    border-radius:18px;
+    position:relative;
+    background:#22272b;
+}
+
+.dashboard-main-card img,
+.dashboard-sub-card img{
+    width:100%;
+    display:block;
+    transition:.4s;
+}
+
+.dashboard-main-card:hover img,
+.dashboard-sub-card:hover img{
+    transform:scale(1.05);
+}
+
+.arrow-badge{
+    position:absolute;
+    right:20px;
+    bottom:20px;
+    width:55px;
+    height:55px;
+    background:#a3da8d;
+    color:#1a1d20;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.8rem;
+    font-weight:bold;
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:900px){
+
+.project-display-grid{
+    grid-template-columns:1fr;
+}
+
+.projects-header{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.projects-header h2{
+    font-size:2.3rem;
+}
+
+.header-tagline{
+    max-width:100%;
+}
+
+}
+
+@media(max-width:600px){
+
+.project-tabs{
+    justify-content:center;
+}
+
+.tab-btn{
+    flex:1 1 45%;
+    text-align:center;
+}
+
+.projects-header h2{
+    font-size:2rem;
+}
+
+}
