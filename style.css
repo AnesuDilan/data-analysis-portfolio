@@ -501,3 +501,77 @@ button{
     }
 
 }
+/* ==========================================
+   CASE STUDY
+========================================== */
+
+.case-study{
+    width:min(90%,1000px);
+    margin:80px auto;
+}
+
+.case-hero{
+    margin-bottom:50px;
+}
+
+.case-hero h1{
+    font-family:'Orbitron',sans-serif;
+    font-size:2.8rem;
+    margin-bottom:20px;
+}
+
+.case-intro{
+    max-width:700px;
+    color:#94a3b8;
+    line-height:1.9;
+}
+
+.dashboard-showcase{
+    margin:50px 0 70px;
+}
+
+.dashboard-showcase img{
+    width:100%;
+    border-radius:18px;
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
+.case-section{
+    margin-bottom:60px;
+}
+
+.case-section h3{
+    color:#a3da8d;
+    font-family:'Orbitron',sans-serif;
+    margin-bottom:20px;
+}
+
+.case-section p,
+.case-section li{
+    color:#94a3b8;
+    line-height:1.9;
+}
+
+.case-section ul{
+    padding-left:20px;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.skills span{
+    background:#23272b;
+    border:1px solid rgba(255,255,255,.08);
+    padding:10px 18px;
+    border-radius:30px;
+}
+
+.case-buttons{
+    margin-top:70px;
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
