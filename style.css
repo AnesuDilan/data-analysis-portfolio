@@ -575,3 +575,82 @@ button{
     gap:20px;
     flex-wrap:wrap;
 }
+/* ==========================================
+   CASE STUDY PROCESS
+========================================== */
+
+.process-card{
+    display:flex;
+    gap:35px;
+    align-items:center;
+    margin:45px 0;
+    flex-wrap:wrap;
+}
+
+.process-card img{
+    flex:1;
+    min-width:320px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.process-info{
+    flex:1;
+}
+
+.process-info h4{
+    margin-bottom:15px;
+    font-size:1.4rem;
+}
+
+.process-info p{
+    color:#94a3b8;
+    line-height:1.8;
+}
+
+.process-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+
+.process-small{
+    background:#23272b;
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.3s;
+}
+
+.process-small:hover{
+    transform:translateY(-6px);
+    border-color:#a3da8d;
+}
+
+.process-small img{
+    width:100%;
+    display:block;
+}
+
+.process-small h4{
+    padding:20px 20px 10px;
+}
+
+.process-small p{
+    padding:0 20px 25px;
+    color:#94a3b8;
+    line-height:1.7;
+}
+
+@media(max-width:768px){
+
+.process-card{
+    flex-direction:column;
+}
+
+.process-card img{
+    min-width:100%;
+}
+
+}
