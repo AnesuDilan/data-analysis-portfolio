@@ -654,3 +654,23 @@ button{
 }
 
 }
+/* ==========================================
+   TOOLS USED
+========================================== */
+
+.tools-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:25px;
+}
+
+.tool-badge{
+    background:#23272b;
+    color:#a3da8d;
+    border:1px solid rgba(163,218,141,.3);
+    padding:12px 20px;
+    border-radius:50px;
+    font-size:.95rem;
+    font-weight:500;
+}
