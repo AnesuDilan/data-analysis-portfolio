@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cruise Revenue Management | Dilan Anesu Mtume</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<main class="case-study">
+
+<div class="section-divider">
+
+<h2 class="section-heading">
+Case Study
+</h2>
+
+<div class="heading-line"></div>
+
+</div>
+
+<section class="case-hero">
+
+<h1>Cruise Revenue Management</h1>
+
+<p class="case-intro">
+
+This SQL project analyses cruise booking data using Microsoft SQL Server to
+understand revenue performance, booking behaviour, occupancy rates,
+and customer satisfaction.
+
+</p>
+
+</section>
+<section class="case-section">
+
+<h3>Tools Used</h3>
+
+<div class="tools-grid">
+
+<span class="tool-badge">Microsoft SQL Server</span>
+
+<span class="tool-badge">SSMS</span>
+
+<span class="tool-badge">CTEs</span>
+
+<span class="tool-badge">CASE</span>
+
+<span class="tool-badge">GROUP BY</span>
+
+<span class="tool-badge">ORDER BY</span>
+
+<span class="tool-badge">Aggregate Functions</span>
+
+<span class="tool-badge">Date Functions</span>
+
+</div>
+
+</section>
+<section class="case-section">
+
+<h3>Dataset</h3>
+
+<ul>
+
+<li>Cruise Reservations</li>
+
+<li>Cruise Lines</li>
+
+<li>Ships</li>
+
+<li>Booking Dates</li>
+
+<li>Travel Dates</li>
+
+<li>Revenue</li>
+
+<li>Occupancy Rates</li>
+
+<li>Guest Spending</li>
+
+<li>Customer Satisfaction</li>
+
+</ul>
+
+</section>
+<section class="case-section">
+
+<h3>Business Questions</h3>
+
+<ul>
+
+<li>Which cruise line generated the highest revenue?</li>
+
+<li>Which ships received the highest customer satisfaction?</li>
+
+<li>Which countries booked the most cruises?</li>
+
+<li>Which package generated the highest guest spending?</li>
+
+<li>How have bookings changed over time?</li>
+
+<li>Which cruise lines performed above average?</li>
+
+</ul>
+
+</section>
+<section class="case-section">
+
+<h3>Database Creation</h3>
+
+<p>
+
+The project began by creating the Cruise Revenue Management database and importing
+the dataset into Microsoft SQL Server before performing data exploration and analysis.
+
+</p>
+
+<pre><code>
+
+CREATE DATABASE CruiseRevenueManagement;
+
+USE CruiseRevenueManagement;
+
+</code></pre>
+
+<img src="your-folder-name/create_database.png"
+     alt="Database Creation"
+     class="dashboard-image">
+
+</section>
+<!-- ==========================
+     DATA CLEANING
+========================== -->
+
+<section class="case-section">
+
+<h3>Data Cleaning</h3>
+
+<p>
+Before performing any analysis, the dataset was checked for missing values,
+duplicate reservations, and invalid revenue values to ensure data quality.
+</p>
+
+<div class="process-card">
+
+<div class="process-info">
+
+<h4>Checking for NULL Values</h4>
+
+<pre><code>
+SELECT *
+FROM cruise_bookings
+WHERE Revenue IS NULL
+   OR Occupancy IS NULL
+   OR Satisfaction IS NULL;
+</code></pre>
+
+<p>
+This query verifies whether important analytical fields contain missing values
+that could affect business reporting.
+</p>
+
+</div>
+
+</div>
+
+<div class="process-card">
+
+<div class="process-info">
+
+<h4>Checking for Duplicate Reservations</h4>
+ 
+<pre><code>
+SELECT Reservation_ID,
+COUNT(*) AS TotalDuplicates
+FROM cruise_bookings
+GROUP BY Reservation_ID
+HAVING COUNT(*) > 1;
+</code></pre>
+
+<p>
+Duplicate reservations were identified to ensure each booking was counted only once.
+</p>
+
+</div>
+
+</div>
+
+<div class="process-card">
+
+<div class="process-info">
+
+<h4>Checking Negative Revenue</h4>
+
+<pre><code>
+SELECT *
+FROM cruise_bookings
+WHERE Revenue < 0;
+</code></pre>
+
+<p>
+Revenue values were validated to identify possible data entry errors.
+</p>
+<img src="your-folder-name/data_cleaning.png"
+         alt="Data cleaning"
+         class="dashboard-image">
+</div>
+
+</div>
+
+</section>
+<!-- ==========================
+     DATA EXPLORATION
+========================== -->
+
+<section class="case-section">
+
+<h3>Data Exploration</h3>
+
+<div class="process-card">
+
+<div class="process-info">
+
+<h4>Total Bookings</h4>
+
+<pre><code>
+SELECT COUNT(*)
+FROM cruise_bookings;
+</code></pre>
+
+<p>
+Calculated the total number of reservations contained in the dataset.
+</p>
+
+</div>
+
+</div>
+
+<div class="process-card">
+
+<div class="process-info">
+
+<h4>Distinct Cruise Lines</h4>
+
+<pre><code>
+SELECT DISTINCT Cruise_Line
+FROM cruise_bookings;
+</code></pre>
+
+<p>
+Identified all cruise operators represented within the dataset.
+</p>
+
+</div>
+
+</div>
+
+<div class="process-card">
+
+<div class="process-info">
+
+<h4>Booking Sources</h4>
+
+<pre><code>
+SELECT Booking_Source,
+COUNT(*) AS TotalBookings
+FROM cruise_bookings
+GROUP BY Booking_Source
+ORDER BY TotalBookings DESC;
+</code></pre>
+
+<p>
+Analysed where bookings originated to understand customer booking behaviour.
+</p>
+<img src="your-folder-name/data_exploration.png"
+         alt="Data exploration"
+         class="dashboard-image">
+</div>
+
+</div>
+
+</section>
+<!-- ==========================
+     REVENUE ANALYSIS
+========================== -->
+
+<section class="case-section">
+
+<h3>Revenue Analysis</h3>
+
+<div class="process-card">
+
+<div class="process-info">
+
+<h4>Total Revenue</h4>
+
+<pre><code>
+SELECT SUM(Revenue) AS TotalRevenue
+FROM cruise_bookings;
+</code></pre>
+
+<p>
+Calculated the total revenue generated from all cruise bookings.
+</p>
+
+</div>
+
+</div>
+
+<div class="process-card">
+
+<div class="process-info">
+
+<h4>Revenue by Cruise Line</h4>
+
+<pre><code>
+SELECT Cruise_Line,
+SUM(Revenue) AS Revenue
+FROM cruise_bookings
+GROUP BY Cruise_Line
+ORDER BY Revenue DESC;
+</code></pre>
+<img src="your-folder-name/revenue_by_cruise_line.png"
+         alt="Data exploration"
+         class="dashboard-image">
+<p>
+Compared cruise lines to identify the highest revenue generators.
+</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- ==========================
+     ADVANCED SQL
+========================== -->
+
+<section class="case-section">
+
+<h3>Advanced SQL Techniques</h3>
+
+<p>
+The final stage of the project applied more advanced SQL features to classify revenue,
+analyze booking trends over time, and identify cruise lines that performed above average.
+</p>
+
+</section>
+
+<!-- ==========================
+     CASE STATEMENT
+========================== -->
+
+<section class="case-section">
+
+<h3>Revenue Classification (CASE)</h3>
+
+<p>
+A CASE statement was used to classify bookings into different revenue categories,
+making it easier to identify high-value and low-value bookings.
+</p>
+
+<pre><code>
+SELECT
+Reservation_ID,
+Total_Revenue_USD,
+
+CASE
+    WHEN Total_Revenue_USD >= 5000 THEN 'High Value'
+    WHEN Total_Revenue_USD >= 2500 THEN 'Medium Value'
+    ELSE 'Low Value'
+END AS Booking_Type
+
+FROM cruise_bookings;
+</code></pre>
+
+<img src="your-folder-name/revenue_categories.png"
+     alt="CASE Statement Results"
+     class="dashboard-image">
+
+<p>
+
+<strong>Business Insight:</strong>
+
+Revenue classification helps identify premium bookings and supports targeted
+marketing strategies for high-value customers.
+
+</p>
+
+</section>
+
+<!-- ==========================
+     DATE FUNCTIONS
+========================== -->
+
+<section class="case-section">
+
+<h3>Monthly Booking Trends</h3>
+
+<p>
+Date functions were used to analyse booking activity by month and identify seasonal
+booking patterns.
+</p>
+
+<pre><code>
+SELECT
+
+MONTH(Booking_Date) AS BookingMonth,
+COUNT(*) AS TotalBookings
+
+FROM cruise_bookings
+
+GROUP BY MONTH(Booking_Date)
+
+ORDER BY BookingMonth;
+</code></pre>
+
+<img src="monthly-bookings.png"
+     alt="Monthly Booking Trends"
+     class="dashboard-image">
+
+<p>
+
+<strong>Business Insight:</strong>
+
+Monthly booking trends reveal peak travel seasons, allowing cruise companies
+to optimise staffing, pricing, and promotional campaigns.
+
+</p>
+
+</section>
+
+  <!-- ==========================
+     SQL QUERY GALLERY
+========================== -->
+
+<section class="case-section">
+
+<h3>SQL Query Gallery</h3>
+
+<p>
+Below are some of the key SQL queries developed throughout the project. Each query was designed to answer a specific business question and provide actionable insights from the cruise booking dataset.
+</p>
+
+<div class="query-gallery">
+
+    <div class="query-card">
+
+        <img src="query-revenue.png"
+             alt="Revenue by Cruise Line">
+
+        <h4>Revenue by Cruise Line</h4>
+
+        <p>
+            Calculated total revenue generated by each cruise line to identify the highest-performing operators.
+        </p>
+
+    </div>
+
+    <div class="query-card">
+
+        <img src="query-country.png"
+             alt="Bookings by Country">
+
+        <h4>Bookings by Country</h4>
+
+        <p>
+            Identified the countries generating the highest number of cruise reservations.
+        </p>
+
+    </div>
+
+    <div class="query-card">
+
+        <img src="query-satisfaction.png"
+             alt="Customer Satisfaction">
+
+        <h4>Customer Satisfaction</h4>
+
+        <p>
+            Compared average satisfaction scores across different ships.
+        </p>
+
+    </div>
+
+    <div class="query-card">
+
+        <img src="query-cte.png"
+             alt="CTE Query">
+
+        <h4>Above Average Revenue</h4>
+
+        <p>
+            Used a Common Table Expression (CTE) to identify cruise lines performing above the overall average revenue.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+<!-- ==========================
+     COMMON TABLE EXPRESSIONS
+========================== -->
+
+<section class="case-section">
+
+<h3>Above Average Revenue (CTE)</h3>
+
+<p>
+A Common Table Expression (CTE) was used to compare each cruise line's revenue
+against the overall average revenue.
+</p>
+
+<pre><code>
+WITH RevenueCTE AS (
+
+SELECT
+Cruise_Line,
+SUM(Revenue) AS TotalRevenue
+
+FROM cruise_bookings
+
+GROUP BY Cruise_Line
+
+)
+
+SELECT *
+
+FROM RevenueCTE
+
+WHERE TotalRevenue >
+(
+SELECT AVG(TotalRevenue)
+FROM RevenueCTE
+);
+</code></pre>
+
+<img src="cte-results.png"
+     alt="CTE Results"
+     class="dashboard-image">
+
+<p>
+
+<strong>Business Insight:</strong>
+
+The CTE identifies cruise lines that outperform the overall average,
+making it easier for decision-makers to recognise top-performing operators.
+
+</p>
+
+</section>
+<!-- ==========================
+     KEY INSIGHTS
+========================== -->
+
+<section class="case-section">
+
+<h3>Key Insights</h3>
+
+<ul>
+
+<li>
+Royal Caribbean generated the highest overall revenue, indicating strong market performance.
+</li>
+
+<li>
+Certain cruise lines consistently achieved customer satisfaction scores above the overall average.
+</li>
+
+<li>
+Occupancy rates varied significantly across cruise routes, highlighting opportunities to improve capacity utilization.
+</li>
+
+<li>
+Guests booking premium packages recorded the highest average onboard spending.
+</li>
+
+<li>
+Booking activity showed clear seasonal trends, with peak demand occurring during holiday periods.
+</li>
+
+<li>
+The CTE analysis identified cruise operators consistently performing above the average revenue benchmark.
+</li>
+
+</ul>
+
+</section>
+
+<!-- ==========================
+     BUSINESS RECOMMENDATIONS
+========================== -->
+
+<section class="case-section">
+
+<h3>Business Recommendations</h3>
+
+<ul>
+
+<li>
+Increase marketing efforts during low-demand months to improve occupancy rates.
+</li>
+
+<li>
+Expand premium package offerings to encourage higher guest spending.
+</li>
+
+<li>
+Analyze the strategies used by top-performing cruise lines and apply best practices across the fleet.
+</li>
+
+<li>
+Use customer satisfaction metrics alongside revenue when evaluating operational performance.
+</li>
+
+<li>
+Continue monitoring booking trends to support demand forecasting and pricing decisions.
+</li>
+
+</ul>
+
+</section>
+
+<!-- ==========================
+     PROJECT HIGHLIGHTS
+========================== -->
+
+<section class="case-section">
+
+<h3>Project Highlights</h3>
+
+<div class="tools-grid">
+
+<span class="tool-badge">Microsoft SQL Server</span>
+
+<span class="tool-badge">20+ SQL Queries</span>
+
+<span class="tool-badge">Data Cleaning</span>
+
+<span class="tool-badge">CTEs</span>
+
+<span class="tool-badge">CASE Statements</span>
+
+<span class="tool-badge">Date Functions</span>
+
+<span class="tool-badge">Business Analysis</span>
+
+<span class="tool-badge">Revenue Analytics</span>
+
+</div>
+
+</section>
+
+<!-- ==========================
+     GITHUB
+========================== -->
+
+<section class="case-buttons">
+
+<a href="https://github.com/AnesuDilan/cruise-revenue-management"
+target="_blank"
+class="project-btn">
+
+View GitHub Repository
+
+</a>
+
+<a href="index.html"
+class="project-btn">
+
+← Back to Portfolio
+
+</a>
+
+</section>
+
+</main>
+
+</body>
+
+</html>
