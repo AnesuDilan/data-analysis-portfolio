@@ -346,3 +346,42 @@
 
 </body>
 </html>
+/* ==========================================
+   SQL QUERY GALLERY
+========================================== */
+
+.query-gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+
+.query-card{
+    background:#23272b;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.query-card:hover{
+    transform:translateY(-8px);
+    border-color:#a3da8d;
+}
+
+.query-card img{
+    width:100%;
+    display:block;
+}
+
+.query-card h4{
+    padding:20px 20px 10px;
+    color:#fff;
+}
+
+.query-card p{
+    padding:0 20px 25px;
+    color:#94a3b8;
+    line-height:1.7;
+}
