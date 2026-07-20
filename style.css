@@ -754,3 +754,37 @@ button{
     color:#94a3b8;
     line-height:1.7;
 }
+/* ==========================================
+   SQL WORKFLOW
+========================================== */
+
+.workflow-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:25px;
+    margin-top:30px;
+}
+
+.workflow-card{
+    background:#23272b;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:30px;
+    transition:.3s;
+}
+
+.workflow-card:hover{
+    transform:translateY(-6px);
+    border-color:#a3da8d;
+}
+
+.workflow-card h4{
+    color:#a3da8d;
+    margin-bottom:15px;
+    font-size:1.15rem;
+}
+
+.workflow-card p{
+    color:#94a3b8;
+    line-height:1.7;
+}
