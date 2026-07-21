@@ -500,15 +500,15 @@ button{
     .email-btn{
         width:100%;
     }
-   }
-.menu-icon{
-    top:18px;
-    right:18px;
-}
 
-.menu-icon span{
-    width:24px;
-}
+    .menu-icon{
+        top:18px;
+        right:18px;
+    }
+
+    .menu-icon span{
+        width:24px;
+    }
 
 }
 /* ==========================================
