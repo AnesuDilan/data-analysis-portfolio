@@ -875,3 +875,82 @@ button{
     }
 
 }
+/* ==========================
+   TECHNICAL EXPERTISE
+========================== */
+
+.skills-matrix{
+
+    max-width:900px;
+    margin:60px auto;
+    display:grid;
+    gap:28px;
+
+}
+
+.skill-item{
+
+    display:grid;
+    grid-template-columns:170px 1fr 120px;
+    align-items:center;
+    gap:20px;
+
+}
+
+.skill-item span{
+
+    font-weight:600;
+    color:#ffffff;
+
+}
+
+.skill-bar{
+
+    width:100%;
+    height:12px;
+    background:#1b1b1b;
+    border-radius:30px;
+    overflow:hidden;
+    border:1px solid rgba(0,255,136,.15);
+
+}
+
+.skill-fill{
+
+    height:100%;
+    border-radius:30px;
+    background:linear-gradient(90deg,#00ff88,#00c46a);
+
+}
+
+.advanced{
+
+    width:95%;
+
+}
+
+.intermediate-high{
+
+    width:82%;
+
+}
+
+.intermediate{
+
+    width:70%;
+
+}
+
+.learning{
+
+    width:45%;
+
+}
+
+.skill-item small{
+
+    color:#9ca3af;
+    text-align:right;
+    font-size:.9rem;
+
+}
