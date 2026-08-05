@@ -924,27 +924,23 @@ button{
 }
 
 .advanced{
-
-    width:95%;
-
+    width:90%;
 }
 
 .intermediate-high{
-
-    width:82%;
-
+    width:75%;
 }
 
 .intermediate{
-
     width:70%;
+}
 
+.git{
+    width:65%;
 }
 
 .learning{
-
-    width:45%;
-
+    width:35%;
 }
 
 .skill-item small{
@@ -991,5 +987,34 @@ button{
         text-align:left;
 
     }
+
+}
+.skill-level{
+
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:0.8rem;
+    font-weight:600;
+
+}
+
+.level-advanced{
+
+    background:#00ff8830;
+    color:#00ff88;
+
+}
+
+.level-intermediate{
+
+    background:#3b82f630;
+    color:#60a5fa;
+
+}
+
+.level-learning{
+
+    background:#f59e0b30;
+    color:#fbbf24;
 
 }
