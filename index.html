@@ -12,15 +12,39 @@
 
 <body>
 
-    <div class="menu-icon">
-        <span></span>
-        <span></span>
-    </div>
+    <header class="site-header">
+
+        <div class="nav-wrap">
+
+            <a href="index.html" class="nav-brand">
+                <span class="nav-mark">DM</span>
+                Dilan Anesu Mtume
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#top">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <a href="Dilan Anesu Mtume - CV.pdf" target="_blank" class="nav-cta">Résumé</a>
+
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+
+    </header>
 
     <main>
 
         <!-- HERO -->
-        <section class="portfolio-container">
+        <section class="portfolio-container hero-bg" id="top">
 
             <div class="image-section">
                 <div class="profile-circle">
@@ -46,26 +70,57 @@
                     contributions to any organization.
                 </p>
 
-                <a href="Dilan Anesu Mtume - CV.pdf" target="_blank" class="btn">
-    View CV
+                <div class="hero-buttons">
 
+                    <a href="Dilan Anesu Mtume - CV.pdf" target="_blank" class="btn-outline">
+                        View CV
 
-                    <svg width="16"
-                         height="16"
-                         viewBox="0 0 24 24"
-                         fill="none"
-                         stroke="currentColor"
-                         stroke-width="2"
-                         stroke-linecap="round"
-                         stroke-linejoin="round">
+                        <svg width="16"
+                             height="16"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             stroke-linejoin="round">
 
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                        <polyline points="7 10 12 15 17 10"/>
-                        <line x1="12" y1="15" x2="12" y2="3"/>
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
 
-                    </svg>
+                        </svg>
 
-                </a>
+                    </a>
+
+                    <a href="#portfolio" class="btn-outline">
+                        View Portfolio
+                    </a>
+
+                </div>
+
+                <div class="hero-stats">
+
+                    <div class="hero-stat">
+                        <strong>4</strong>
+                        <span>Projects</span>
+                    </div>
+
+                    <div class="hero-stat">
+                        <strong>300K+</strong>
+                        <span>Records Analysed</span>
+                    </div>
+
+                    <div class="hero-stat">
+                        <strong>5</strong>
+                        <span>Certifications</span>
+                    </div>
+
+                    <div class="hero-stat">
+                        <strong>SQL/XL/PBI</strong>
+                        <span>Core Tools</span>
+                    </div>
+
+                </div>
 
             </div>
 
@@ -210,7 +265,7 @@ Technical Expertise
      PORTFOLIO
 ========================== -->
 
-<div class="section-divider">
+<div class="section-divider" id="portfolio">
     <h2 class="section-heading">Portfolio</h2>
     <div class="heading-line"></div>
 </div>
@@ -284,7 +339,7 @@ Technical Expertise
 </section>
         <!-- CERTIFICATIONS -->
 
-<div class="section-divider">
+<div class="section-divider" id="certifications">
     <h2 class="section-heading">
         Certifications
     </h2>
@@ -326,41 +381,28 @@ Technical Expertise
 </a>
     </div>
 
-               <div class="cert-item">
+    <div class="cert-item">
+        <div>
+            <h3>Microsoft Excel Certificate</h3>
+            <p>University of Johannesburg • August 2025</p>
+        </div>
 
-                <div>
+        <a href="Excel_certifacte.png" target="_blank">
+    View Certificate →
+</a>
+    </div>
 
-                    <h3>Microsoft Excel Certificate</h3>
+    <div class="cert-item">
+        <div>
+            <h3>The Business Intelligence Analyst Course</h3>
+            <p>Udemy (365 Careers) • June 2024</p>
+        </div>
 
-                    <p>University of Johannesburg &bull; August 2025</p>
+        <a href="Business Intelligence Course_page-0001.jpg" target="_blank">
+    View Certificate →
+</a>
+    </div>
 
-                </div>
-
-                <a href="Excel_certifacte.png" target="_blank">
-
-                    View Certificate →
-
-                </a>
-
-            </div>
-    
-            <div class="cert-item">
-
-                <div>
-
-                    <h3>The Business Intelligence Analyst Course</h3>
-
-                    <p>Udemy (365 Careers) &bull; June 2024</p>
-
-                </div>
-
-                <a href="Business Intelligence Course_page-0001.jpg" target="_blank">
-
-                    View Certificate →
-
-                </a>
-
-            </div>
 </section>
 
       
@@ -373,7 +415,7 @@ Technical Expertise
         </p>
     </div>
 
-    <div class="footer-block">
+    <div class="footer-block" id="contact">
         <h3>GET IN TOUCH</h3>
         <p>
             I'm currently open to internships, freelance work, and collaborations in data analytics.
@@ -389,6 +431,21 @@ Technical Expertise
 
    
     </main>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+            });
+        });
+    </script>
 
 </body>
 </html>
