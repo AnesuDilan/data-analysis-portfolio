@@ -1266,3 +1266,36 @@ body{
     }
 
 }
+/* ==========================================
+   HEADER SOCIAL ICONS
+========================================== */
+
+.nav-social{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    color:#c4cdd6;
+}
+
+.nav-social a{
+    display:flex;
+    transition:.25s;
+}
+
+.nav-social a:hover{
+    color:#a3da8d;
+}
+
+@media (max-width:900px){
+
+    .nav-social{
+        display:none;
+    }
+
+}
+.nav-links a{
+    font-size:.92rem;
+    color:#c4cdd6;
+    transition:.25s;
+    margin-right:32px;
+}
