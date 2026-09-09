@@ -1,247 +1,406 @@
 /* ==========================================
-   SITE HEADER / NAVIGATION
+   1. GLOBAL
 ========================================== */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    overflow-x:hidden;
+}
+
 body{
-    padding-top:74px;
+    background:#1a1d20;
+    color:#ffffff;
+    font-family:'Inter',sans-serif;
+    overflow-x:hidden;
 }
 
-.site-header{
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    z-index:200;
-    background:rgba(26,29,32,.85);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(255,255,255,.08);
+img{
+    display:block;
+    width:100%;
+    max-width:100%;
 }
 
-.site-header .nav-wrap{
-    width:min(92%,1200px);
-    margin:0 auto;
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font:inherit;
+    cursor:pointer;
+}
+
+/* ==========================================
+   2. HERO
+========================================== */
+
+.portfolio-container{
+    width:min(90%,1200px);
+    margin:auto;
+    padding:80px 0;
     display:flex;
-    align-items:center;
     justify-content:space-between;
-    height:74px;
-    gap:24px;
+    align-items:center;
+    gap:70px;
 }
 
-.nav-brand{
+.image-section{
+    flex:1;
     display:flex;
-    align-items:center;
-    gap:12px;
-    font-family:'Orbitron',sans-serif;
-    font-size:.9rem;
-    letter-spacing:1px;
-    white-space:nowrap;
-}
-
-.nav-mark{
-    width:36px;
-    height:36px;
-    border-radius:8px;
-    background:linear-gradient(135deg,#a3da8d,#2e4c1f);
-    display:flex;
-    align-items:center;
     justify-content:center;
+}
+
+.profile-circle{
+    width:100%;
+    max-width:450px;
+    aspect-ratio:1;
+    border-radius:50%;
+    overflow:hidden;
+    background:linear-gradient(
+        135deg,
+        rgba(163,218,141,.4),
+        rgba(46,76,31,.4)
+    );
+}
+
+.profile-circle img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    mix-blend-mode:multiply;
+    filter:brightness(.9) contrast(1.1);
+}
+
+.text-section{
+    flex:1;
+}
+
+.hero-name{
     font-family:'Orbitron',sans-serif;
-    font-weight:700;
-    font-size:.8rem;
-    color:#1a1d20;
-    flex-shrink:0;
+    font-size:4rem;
+    line-height:1;
+    margin-bottom:20px;
 }
 
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:32px;
-    list-style:none;
-}
-
-.nav-links a{
-    font-size:.92rem;
-    color:#c4cdd6;
-    transition:.25s;
-    margin-right:32px;
-}
-
-.nav-links li:last-child a{
-    margin-right:0;
-}
-
-.nav-links a:hover{
+.job-title{
+    font-family:'Orbitron',sans-serif;
+    font-size:1rem;
+    letter-spacing:5px;
     color:#a3da8d;
+    margin-bottom:30px;
 }
 
-.nav-cta{
+.bio{
+    max-width:560px;
+    color:#94a3b8;
+    line-height:1.9;
+    margin-bottom:35px;
+}
+
+.download-btn{
     display:inline-flex;
     align-items:center;
-    gap:8px;
-    padding:10px 22px;
-    border:1px solid rgba(163,218,141,.4);
+    gap:10px;
+    padding:15px 34px;
+    border:1px solid rgba(255,255,255,.25);
     border-radius:50px;
-    color:#a3da8d;
-    font-size:.85rem;
-    font-weight:600;
-    transition:.25s;
-    white-space:nowrap;
+    transition:.3s;
 }
 
-.nav-cta:hover{
+.download-btn:hover{
+    background:#ffffff;
+    color:#1a1d20;
+}
+
+/* ==========================================
+   3. MENU
+========================================== */
+
+.menu-icon{
+    position:fixed;
+    top:25px;
+    right:25px;
+    z-index:100;
+    cursor:pointer;
+}
+
+.menu-icon span{
+    display:block;
+    width:28px;
+    height:2px;
+    background:#fff;
+    margin:6px 0;
+    transition:.3s;
+}
+/* ==========================================
+   4. SECTION HEADINGS
+========================================== */
+
+.section-divider{
+    width:min(90%,1200px);
+    margin:120px auto 50px;
+}
+
+.section-heading{
+    font-family:'Orbitron',sans-serif;
+    font-size:2rem;
+    color:#a3da8d;
+    letter-spacing:3px;
+    margin-bottom:15px;
+}
+
+.heading-line{
+    width:65px;
+    height:2px;
+    background:#a3da8d;
+}
+/* ==========================================
+   5. PORTFOLIO
+========================================== */
+
+.portfolio-projects{
+    width:min(90%,1200px);
+    margin:0 auto 120px;
+}
+
+/* Each Technology Section */
+
+.project-category{
+    margin-bottom:90px;
+}
+
+.category-title{
+    font-family:'Orbitron',sans-serif;
+    color:#a3da8d;
+    font-size:1.4rem;
+    letter-spacing:2px;
+    margin-bottom:30px;
+    text-transform:uppercase;
+}
+
+/* Grid */
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    gap:35px;
+}
+
+/* Card */
+
+.project-card{
+    background:#23272b;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    overflow:hidden;
+    transition:all .35s ease;
+}
+
+.project-card:hover{
+    transform:translateY(-8px);
+    border-color:#a3da8d;
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
+.project-card img{
+    width:100%;
+    aspect-ratio:16/9;
+    object-fit:cover;
+}
+
+/* Content */
+
+.project-info{
+    padding:28px;
+}
+
+.project-info h4{
+    font-size:1.45rem;
+    margin-bottom:15px;
+}
+
+.project-info p{
+    color:#94a3b8;
+    line-height:1.8;
+    margin-bottom:22px;
+}
+
+/* Buttons */
+
+.project-links{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.project-btn{
+    display:inline-block;
+    padding:12px 24px;
+    border-radius:50px;
+    border:1px solid rgba(255,255,255,.18);
+    transition:.3s;
+}
+
+.project-btn:hover{
     background:#a3da8d;
     color:#1a1d20;
 }
 
-.nav-toggle{
-    display:none;
-    flex-direction:column;
-    gap:5px;
-    cursor:pointer;
+/* ==========================================
+   6. CERTIFICATIONS
+========================================== */
+
+.certifications{
+    width:min(90%,900px);
+    margin:0 auto 120px;
 }
 
-.nav-toggle span{
-    width:24px;
-    height:2px;
-    background:#fff;
+.cert-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    padding:30px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-@media (max-width:900px){
+.cert-item:last-child{
+    border-bottom:none;
+}
 
-    .nav-links{
-        position:fixed;
-        top:74px;
-        left:0;
-        right:0;
-        background:#1a1d20;
-        border-bottom:1px solid rgba(255,255,255,.08);
-        flex-direction:column;
-        align-items:flex-start;
-        gap:0;
-        max-height:0;
-        overflow:hidden;
-        transition:max-height .3s ease;
-    }
+.cert-item h3{
+    font-size:1.25rem;
+    margin-bottom:8px;
+}
 
-    .nav-links.open{
-        max-height:400px;
-    }
+.cert-item p{
+    color:#94a3b8;
+}
 
-    .nav-links li{
-        width:100%;
-    }
+.cert-item a{
+    color:#a3da8d;
+    font-weight:600;
+    white-space:nowrap;
+    transition:.3s;
+}
 
-    .nav-links a{
-        display:block;
-        width:100%;
-        padding:18px min(8%,60px);
-        border-bottom:1px solid rgba(255,255,255,.06);
-    }
-
-    .nav-cta{
-        display:none;
-    }
-
-    .nav-toggle{
-        display:flex;
-    }
-
+.cert-item a:hover{
+    color:#ffffff;
 }
 
 /* ==========================================
-   HERO REFRESH
+   7. FOOTER
 ========================================== */
 
-.hero-bg{
-    position:relative;
+.portfolio-footer{
+    width:min(90%,1000px);
+    margin:120px auto 60px;
+    padding-top:60px;
+    border-top:1px solid rgba(255,255,255,.08);
 }
 
-.hero-bg::before{
-    content:'';
-    position:absolute;
-    inset:-40px -10% auto -10%;
-    height:600px;
-    background-image:
-        linear-gradient(rgba(163,218,141,.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(163,218,141,.06) 1px, transparent 1px);
-    background-size:46px 46px;
-    -webkit-mask-image:radial-gradient(circle at 25% 35%, black, transparent 65%);
-    mask-image:radial-gradient(circle at 25% 35%, black, transparent 65%);
-    pointer-events:none;
-    z-index:-1;
+.footer-block{
+    max-width:700px;
+    margin-bottom:60px;
 }
 
-.hero-buttons{
-    display:flex;
-    gap:16px;
-    flex-wrap:wrap;
-    margin-bottom:30px;
+.footer-block:last-child{
+    margin-bottom:0;
 }
 
-.btn-outline{
+.portfolio-footer h3{
+    font-family:'Orbitron',sans-serif;
+    color:#a3da8d;
+    font-size:1rem;
+    letter-spacing:3px;
+    margin-bottom:18px;
+}
+
+.portfolio-footer p{
+    color:#94a3b8;
+    line-height:1.9;
+    margin-bottom:28px;
+}
+
+.email-btn{
     display:inline-flex;
     align-items:center;
-    gap:10px;
-    padding:15px 30px;
-    border:1px solid rgba(255,255,255,.25);
+    justify-content:center;
+    padding:14px 34px;
+    background:#a3da8d;
+    color:#1a1d20;
     border-radius:50px;
+    font-weight:600;
     transition:.3s;
-    font-size:.95rem;
 }
 
-.btn-outline:hover{
-    border-color:#a3da8d;
-    color:#a3da8d;
+.email-btn:hover{
+    background:#ffffff;
+    transform:translateY(-2px);
 }
-
-.hero-stats{
-    display:flex;
-    flex-wrap:wrap;
-    gap:14px;
-}
-
-.hero-stat{
-    background:#23272b;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:14px;
-    padding:16px 22px;
-    min-width:128px;
-}
-
-.hero-stat strong{
-    display:block;
-    font-family:'Orbitron',sans-serif;
-    font-size:1.15rem;
-    color:#a3da8d;
-    margin-bottom:4px;
-    white-space:nowrap;
-}
-
-.hero-stat span{
-    font-size:.72rem;
-    color:#94a3b8;
-    letter-spacing:.4px;
-    text-transform:uppercase;
-}
+/* ==========================================
+   8. RESPONSIVE
+========================================== */
 
 @media (max-width:992px){
 
-    .hero-buttons,
-    .hero-stats{
-        justify-content:center;
-    }
-
-}
-
-@media (max-width:480px){
-
-    .btn-outline{
-        width:100%;
-        justify-content:center;
-    }
-
-    .hero-buttons{
+    .portfolio-container{
         flex-direction:column;
+        text-align:center;
+        padding:60px 0;
+    }
+
+    .text-section{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .bio{
+        max-width:650px;
+    }
+
+    .hero-name{
+        font-size:3rem;
+    }
+
+    .project-grid{
+        grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    }
+
+    .cert-item{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:18px;
     }
 
 }
+
+
+@media (max-width:768px){
+
+    .menu-icon{
+        top:25px;
+        right:25px;
+    }
+
+    .portfolio-container{
+        gap:40px;
+    }
+
+    .profile-circle{
+        max-width:280px;
+    }
+
+    .hero-name{
+        font-size:2.5rem;
+        line-height:1.1;
+    }
+
+    .job-title{
