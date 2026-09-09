@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Cruise Revenue Management | Dilan Anesu Mtume</title>
+<title>Cruise Revenue Management Dashboard | Dilan Anesu Mtume</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -18,89 +18,186 @@
 
 <main class="case-study">
 
+<!-- ==========================
+     PAGE TITLE
+========================== -->
+
 <div class="section-divider">
 
-<h2 class="section-heading">
-Case Study
-</h2>
+    <h2 class="section-heading">
+        Power BI Case Study
+    </h2>
 
-<div class="heading-line"></div>
+    <div class="heading-line"></div>
 
 </div>
 
+<!-- ==========================
+     HERO
+========================== -->
+
 <section class="case-hero">
 
-<h1>Cruise Revenue Management</h1>
+    <h1>Cruise Revenue Management Dashboard</h1>
 
-<p class="case-intro">
+    <p class="case-intro">
 
-This SQL project analyses cruise booking data using Microsoft SQL Server to
-understand revenue performance, booking behaviour, occupancy rates,
-and customer satisfaction.
+        An interactive Power BI dashboard developed from a Microsoft SQL Server
+        analysis of cruise booking data. The dashboard transforms raw reservation
+        records into a live view of revenue, occupancy, guest spending and
+        customer satisfaction across cruise lines and ships.
 
-</p>
+    </p>
 
 </section>
-     <section class="case-section">
+
+<!-- ==========================
+     BUSINESS PROBLEM
+========================== -->
+
+<section class="case-section">
 
 <h3>Business Problem</h3>
 
 <p>
 
-Cruise companies collect large volumes of booking and customer data every day,
-but raw data alone cannot support effective decision-making.
+Cruise operators generate large volumes of booking and guest data across
+multiple ships, routes and package types, making it difficult to track
+performance using static reports alone. Without an interactive reporting
+layer, spotting which cruise lines are over- or under-performing, where
+occupancy is slipping, and which packages drive the most guest spending
+takes far longer than it should.
 
-The objective of this project was to use SQL to transform raw booking data into
-meaningful business insights by analysing revenue performance, booking trends,
-customer satisfaction, occupancy rates, and guest spending.
+</p>
 
-The findings can help management identify high-performing cruise lines,
-understand customer behaviour, optimise pricing strategies, and improve
-overall operational performance.
+<p>
+
+The objective of this project was to turn the cleaned booking dataset into
+a Power BI dashboard that lets management monitor revenue and satisfaction
+in real time, compare performance across cruise lines, and support pricing
+and capacity decisions with data rather than intuition.
 
 </p>
 
 </section>
+
+<!-- ==========================
+     PROJECT OVERVIEW
+========================== -->
+
 <section class="case-section">
 
-<h3>Tools Used</h3>
+<h3>Project Overview</h3>
 
-<div class="tools-grid">
+<p>
 
-<span class="tool-badge">Microsoft SQL Server</span>
+This project is the second half of an end-to-end analytics workflow that
+began in Microsoft SQL Server. The booking data was first cleaned, validated
+and explored using SQL &mdash; CTEs, CASE statements, aggregate and date
+functions &mdash; before being imported into Power BI for data modelling,
+DAX measures and dashboard design.
 
-<span class="tool-badge">SSMS</span>
+</p>
 
-<span class="tool-badge">CTEs</span>
+<p>
 
-<span class="tool-badge">CASE</span>
+The final report gives a single, filterable view of revenue, occupancy,
+guest spending and satisfaction, so the same questions answered with SQL
+queries in the first stage of this project can now be explored interactively
+by anyone on the management team, not just someone comfortable writing SQL.
 
-<span class="tool-badge">GROUP BY</span>
+</p>
 
-<span class="tool-badge">ORDER BY</span>
+</section>
 
-<span class="tool-badge">Aggregate Functions</span>
+<!-- ==========================
+     ANALYTICS WORKFLOW
+========================== -->
 
-<span class="tool-badge">Date Functions</span>
+<section class="case-section">
+
+<h3>Analytics Workflow</h3>
+
+<p>
+
+This project demonstrates the complete analytics lifecycle by combining
+Microsoft SQL Server with Microsoft Power BI to transform raw booking data
+into decision-ready business intelligence.
+
+</p>
+
+<div class="process-grid">
+
+<div class="process-small">
+
+<h4>1. SQL Data Preparation</h4>
+
+<p>
+
+The cruise reservation dataset was imported into Microsoft SQL Server, where
+data quality checks, cleaning and exploratory analysis were performed. SQL
+queries answered the initial business questions and prepared a reliable
+dataset for reporting.
+
+</p>
+
+</div>
+
+<div class="process-small">
+
+<h4>2. Power BI Development</h4>
+
+<p>
+
+The cleaned SQL dataset was imported into Power BI, where Power Query handled
+data transformation, DAX measures were built for revenue and occupancy KPIs,
+and interactive visuals were designed around the business questions.
+
+</p>
+
+</div>
+
+<div class="process-small">
+
+<h4>3. Business Intelligence</h4>
+
+<p>
+
+The completed dashboard lets management monitor revenue and satisfaction by
+cruise line and ship, identify high- and low-performing routes, and support
+pricing and capacity decisions with live, filterable data.
+
+</p>
+
+</div>
 
 </div>
 
 </section>
+
+<!-- ==========================
+     DATASET
+========================== -->
+
 <section class="case-section">
 
 <h3>Dataset</h3>
+
+<p>
+
+The dashboard is built on the same cruise reservation dataset used in the
+SQL analysis stage of this project, covering bookings across multiple cruise
+lines, ships and package types.
+
+</p>
 
 <ul>
 
 <li>Cruise Reservations</li>
 
-<li>Cruise Lines</li>
+<li>Cruise Lines & Ships</li>
 
-<li>Ships</li>
-
-<li>Booking Dates</li>
-
-<li>Travel Dates</li>
+<li>Booking Dates & Travel Dates</li>
 
 <li>Revenue</li>
 
@@ -108,82 +205,185 @@ overall operational performance.
 
 <li>Guest Spending</li>
 
-<li>Customer Satisfaction</li>
+<li>Customer Satisfaction Scores</li>
 
 </ul>
 
 </section>
+
+<!-- ==========================
+     TOOLS USED
+========================== -->
+
+<section class="case-section">
+
+<h3>Tools Used</h3>
+
+<div class="tools-grid">
+
+<span class="tool-badge">Microsoft Power BI</span>
+
+<span class="tool-badge">Microsoft SQL Server</span>
+
+<span class="tool-badge">Power Query</span>
+
+<span class="tool-badge">DAX</span>
+
+<span class="tool-badge">Data Modelling</span>
+
+<span class="tool-badge">Data Visualization</span>
+
+<span class="tool-badge">Dashboard Design</span>
+
+</div>
+
+<p style="margin-top:25px;">
+
+The dataset was first analysed in <strong>Microsoft SQL Server</strong> to
+clean the data and answer key business questions. The prepared dataset was
+then imported into <strong>Power BI</strong>, where Power Query, DAX measures
+and interactive visualisations were used to build the final dashboard.
+
+</p>
+
+</section>
+
+<!-- ==========================
+     BUSINESS QUESTIONS
+========================== -->
+
 <section class="case-section">
 
 <h3>Business Questions</h3>
 
+<p>
+
+The dashboard was designed to help management answer key business questions
+such as:
+
+</p>
+
 <ul>
 
-<li>Which cruise line generated the highest revenue?</li>
+<li>Which cruise line is generating the highest total revenue?</li>
 
-<li>Which ships received the highest customer satisfaction?</li>
+<li>How does occupancy vary across ships and routes?</li>
 
-<li>Which countries booked the most cruises?</li>
+<li>Which packages drive the highest average guest spending?</li>
 
-<li>Which package generated the highest guest spending?</li>
+<li>How does customer satisfaction compare across the fleet?</li>
 
-<li>How have bookings changed over time?</li>
+<li>Which cruise lines are performing above the revenue average?</li>
 
-<li>Which cruise lines performed above average?</li>
+<li>How do bookings trend over time, and where are the seasonal peaks?</li>
 
 </ul>
 
 </section>
+
 <!-- ==========================
-     SQL WORKFLOW
+     DASHBOARD
 ========================== -->
 
 <section class="case-section">
 
-<h3>SQL Workflow</h3>
+<h3>Dashboard</h3>
 
 <p>
-The project followed a structured SQL analysis process, beginning with database setup and ending with business insights that support data-driven decision-making.
+
+The dashboard brings revenue, occupancy, guest spending and satisfaction
+together into a single interactive view, with slicers for cruise line and
+booking period so management can filter down to the segment they care about.
+
 </p>
 
-<div class="workflow-grid">
+<div class="process-grid">
 
-<div class="workflow-card">
+    <div class="process-small">
 
-<h4>Database Setup</h4>
+        <a href="your-folder-name/cruise_revenue_dashboard01.png" target="_blank">
+
+            <img src="your-folder-name/cruise_revenue_dashboard01.png"
+                 alt="Cruise Revenue Management Dashboard">
+
+        </a>
+
+        <h4>Revenue & Occupancy Overview</h4>
+
+        <p>
+
+        KPI cards for total revenue, occupancy and average guest spending sit
+        alongside cruise-line and ship-level breakdowns, with satisfaction
+        scores shown side by side so performance and experience can be read
+        together rather than in separate reports.
+
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- ==========================
+     DASHBOARD FEATURES
+========================== -->
+
+<section class="case-section">
+
+<h3>Dashboard Features</h3>
+
+<div class="process-grid">
+
+<div class="process-small">
+
+<h4>Executive KPI Cards</h4>
 
 <p>
-Created the Cruise Revenue Management database, imported the dataset, and verified data types before analysis.
+
+Total Revenue, Occupancy Rate, Average Guest Spending and Average Satisfaction
+are all visible from a single view.
+
 </p>
 
 </div>
 
-<div class="workflow-card">
+<div class="process-small">
 
-<h4>Data Cleaning</h4>
+<h4>Interactive Filtering</h4>
 
 <p>
-Checked for missing values, duplicate reservations, and invalid revenue records to ensure data quality.
+
+Slicers allow users to filter by cruise line and booking period, enabling
+deeper analysis without touching the underlying report.
+
 </p>
 
 </div>
 
-<div class="workflow-card">
+<div class="process-small">
 
-<h4>Data Exploration</h4>
+<h4>Revenue & Satisfaction Together</h4>
 
 <p>
-Explored cruise lines, booking sources, guest countries, and reservation trends to understand the dataset.
+
+Revenue and customer satisfaction are shown side by side, so strong sales
+performance can be checked against guest experience rather than viewed in
+isolation.
+
 </p>
 
 </div>
 
-<div class="workflow-card">
+<div class="process-small">
 
-<h4>Business Analysis</h4>
+<h4>Business-Focused Reporting</h4>
 
 <p>
-Used aggregate functions, CASE statements, date functions, and Common Table Expressions (CTEs) to answer key business questions.
+
+The dashboard turns raw booking data into insights decision-makers can act
+on directly, without needing to write a query themselves.
+
 </p>
 
 </div>
@@ -192,154 +392,96 @@ Used aggregate functions, CASE statements, date functions, and Common Table Expr
 
 </section>
 
-
-     <!-- ==========================
-     SQL QUERY GALLERY
+<!-- ==========================
+     POWER BI SKILLS
 ========================== -->
 
 <section class="case-section">
 
-<h3>SQL Query Gallery</h3>
+<h3>Power BI Skills Demonstrated</h3>
 
-<p class="gallery-intro">
-The following screenshots showcase some of the SQL queries developed throughout
-the project. Each query answers a business question and demonstrates practical
-SQL techniques used during the analysis.
+<p>
+
+This project demonstrates practical business intelligence skills by combining
+data preparation, modelling, visualisation and analytical reporting to solve
+a real-world revenue and operations problem.
+
 </p>
 
-<div class="query-gallery">
+<div class="skills">
 
-    <div class="query-card">
+<span>Microsoft Power BI</span>
 
-        <a href="your-folder-name/rev_by_cruise_line.png" target="_blank">
-            <img src="your-folder-name/rev_by_cruise_line.png"
-                 alt="Revenue by Cruise Line">
-        </a>
+<span>Microsoft SQL Server</span>
 
-        <h4>Revenue by Cruise Line</h4>
+<span>Power Query</span>
 
-        <p>
-            Used <strong>GROUP BY</strong> and
-            <strong>SUM()</strong> to determine which cruise lines generated the highest revenue.
-        </p>
+<span>DAX Measures</span>
 
-    </div>
+<span>Data Modelling</span>
 
-    <div class="query-card">
+<span>KPI Development</span>
 
-        <a href="your-folder-name/avg_daily_spend.png" target="_blank">
-            <img src="your-folder-name/avg_daily_spend.png"
-                 alt="Bookings by Country">
-        </a>
+<span>Interactive Slicers</span>
 
-        <h4>Bookings by Guest Country</h4>
+<span>Data Visualisation</span>
 
-        <p>
-            Counted reservations by guest country to identify the markets contributing
-            the largest number of bookings.
-        </p>
+<span>Dashboard Design</span>
 
-    </div>
+<span>Business Intelligence</span>
 
-    <div class="query-card">
-
-        <a href="your-folder-name/country_by_booking.png" target="_blank">
-            <img src="your-folder-name/country_by_booking.png"
-                 alt="Average Satisfaction">
-        </a>
-
-        <h4>Customer Satisfaction</h4>
-
-        <p>
-            Calculated average satisfaction scores for each ship to compare customer
-            experience across the fleet.
-        </p>
-
-    </div>
-
-    <div class="query-card">
-
-        <a href="your-folder-name/avg_satis.png" target="_blank">
-            <img src="your-folder-name/avg_satis.png"
-                 alt="Average Spending">
-        </a>
-
-        <h4>Guest Spending</h4>
-
-        <p>
-            Compared average guest spending across package types using aggregate
-            functions.
-        </p>
-
-    </div>
-
-    <div class="query-card">
-
-        <a href="your-folder-name/rev_cat.png" target="_blank">
-            <img src="your-folder-name/rev_cat.png"
-                 alt="CASE Statement">
-        </a>
-
-        <h4>Revenue Categories</h4>
-
-        <p>
-            Applied a <strong>CASE</strong> statement to classify bookings into
-            High, Medium and Low revenue categories.
-        </p>
-
-    </div>
-
-    <div class="query-card">
-
-        <a href="your-folder-name/cruise_line_rev.png" target="_blank">
-            <img src="your-folder-name/cruise_line_rev.png"
-                 alt="CTE Query">
-        </a>
-
-        <h4>Above Average Cruise Lines</h4>
-
-        <p>
-            Used a <strong>Common Table Expression (CTE)</strong> to identify
-            cruise lines generating above-average revenue.
-        </p>
-
-    </div>
+<span>Analytical Reporting</span>
 
 </div>
 
 </section>
+
 <!-- ==========================
      KEY INSIGHTS
 ========================== -->
 
 <section class="case-section">
 
-<h3>Key Insights</h3>
+<h3>Key Insights &amp; Business Value</h3>
 
 <ul>
 
 <li>
-Royal Caribbean generated the highest overall revenue, indicating strong market performance.
+
+<strong>Royal Caribbean generated the highest overall revenue</strong>,
+indicating strong market performance relative to other cruise lines in the
+dataset.
+
 </li>
 
 <li>
-Certain cruise lines consistently achieved customer satisfaction scores above the overall average.
+
+<strong>Occupancy rates varied significantly across routes</strong>,
+highlighting clear opportunities to improve capacity utilisation on
+underperforming sailings.
+
 </li>
 
 <li>
-Occupancy rates varied significantly across cruise routes, highlighting opportunities to improve capacity utilization.
+
+<strong>Premium packages recorded the highest average guest spending</strong>,
+pointing to an opportunity to expand premium offerings.
+
 </li>
 
 <li>
-Guests booking premium packages recorded the highest average onboard spending.
+
+<strong>Booking activity showed clear seasonal trends</strong>, with peak
+demand occurring during holiday periods.
+
 </li>
 
 <li>
-Booking activity showed clear seasonal trends, with peak demand occurring during holiday periods.
-</li>
 
-<li>
-The CTE analysis identified cruise operators consistently performing above the average revenue benchmark.
+<strong>Certain cruise lines consistently scored above average on customer
+satisfaction</strong>, independent of revenue performance &mdash; a signal
+worth investigating for what those operators are doing differently.
+
 </li>
 
 </ul>
@@ -357,23 +499,38 @@ The CTE analysis identified cruise operators consistently performing above the a
 <ul>
 
 <li>
-Increase marketing efforts during low-demand months to improve occupancy rates.
+
+Increase marketing activity during low-demand months to lift occupancy on
+underperforming routes.
+
 </li>
 
 <li>
-Expand premium package offerings to encourage higher guest spending.
+
+Expand premium package offerings to capture more of the higher guest-spending
+segment.
+
 </li>
 
 <li>
-Analyze the strategies used by top-performing cruise lines and apply best practices across the fleet.
+
+Review the practices of top-performing cruise lines and apply relevant
+lessons to lower-performing routes.
+
 </li>
 
 <li>
-Use customer satisfaction metrics alongside revenue when evaluating operational performance.
+
+Track satisfaction alongside revenue when evaluating operational performance,
+rather than relying on revenue alone.
+
 </li>
 
 <li>
-Continue monitoring booking trends to support demand forecasting and pricing decisions.
+
+Continue using the interactive dashboard alongside the underlying SQL
+analysis to support ongoing demand forecasting and pricing decisions.
+
 </li>
 
 </ul>
@@ -381,37 +538,7 @@ Continue monitoring booking trends to support demand forecasting and pricing dec
 </section>
 
 <!-- ==========================
-     PROJECT HIGHLIGHTS
-========================== -->
-
-<section class="case-section">
-
-<h3>Project Highlights</h3>
-
-<div class="tools-grid">
-
-<span class="tool-badge">Microsoft SQL Server</span>
-
-<span class="tool-badge">20+ SQL Queries</span>
-
-<span class="tool-badge">Data Cleaning</span>
-
-<span class="tool-badge">CTEs</span>
-
-<span class="tool-badge">CASE Statements</span>
-
-<span class="tool-badge">Date Functions</span>
-
-<span class="tool-badge">Business Analysis</span>
-
-<span class="tool-badge">Revenue Analytics</span>
-
-</div>
-
-</section>
-
-<!-- ==========================
-     GITHUB
+     PROJECT LINKS
 ========================== -->
 
 <section class="case-buttons">
@@ -420,14 +547,14 @@ Continue monitoring booking trends to support demand forecasting and pricing dec
 target="_blank"
 class="project-btn">
 
-View GitHub Repository
+GitHub Repository
 
 </a>
 
-<a href="index.html"
+<a href="powerbi.html"
 class="project-btn">
 
-← Back to Portfolio
+← Back to Power BI Projects
 
 </a>
 
