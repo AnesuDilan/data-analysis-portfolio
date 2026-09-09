@@ -1386,3 +1386,28 @@ body{
     }
 
 }
+/* ==========================================
+   SKILLS — GROUPED TAGS
+========================================== */
+
+.skills-groups{
+    max-width:900px;
+    margin:50px auto 0;
+}
+
+.skills-group{
+    margin-bottom:30px;
+}
+
+.skills-group:last-child{
+    margin-bottom:0;
+}
+
+.skills-group-label{
+    font-size:.78rem;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:#94a3b8;
+    margin-bottom:14px;
+    font-weight:600;
+}
